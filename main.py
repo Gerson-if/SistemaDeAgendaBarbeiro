@@ -1,3 +1,6 @@
-nomeusuario: str = "ola mundo"
+from flask import Flask
 
-print(nomeusuario)
+app = Flask(__name__)
+
+
+def escolha():
