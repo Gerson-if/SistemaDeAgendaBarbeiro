@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Agendamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stely.css') }}">
+    <script>
+        // Função para exibir uma seção e ocultar as outras
+        function mostrarProximaSecao(atual, proxima) {
+            document.getElementById(atual).style.display = 'none';
+            document.getElementById(proxima).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+<main>
+    <h1>Bem-vindo ao Sistema de Agendamento</h1>
+
+    <!-- Seção 1: Escolha de Serviços -->
+    <section id="servicos" style="display: block;">
+        <h2>Escolha o Serviço</h2>
+        <button onclick="mostrarProximaSecao('servicos', 'horarios')">Corte de Cabelo(Degradê)</button>
+        <button onclick="mostrarProximaSecao('servicos', 'horarios')">Corte de Cabelo(Padrão Militar)</button>
+        <button onclick="mostrarProximaSecao('servicos', 'horarios')">Corte de Cabelo(Moicano)</button>
+    </section>
+
+    <!-- Seção 2: Escolha do Horário -->
+    <section id="horarios" style="display: none;">
+        <h2>Escolha o Horário</h2>
+        <button onclick="mostrarProximaSecao('horarios', 'contato')">09:00 - 10:00</button>
+        <button onclick="mostrarProximaSecao('horarios', 'contato')">10:00 - 11:00</button>
+        <button onclick="mostrarProximaSecao('horarios', 'contato')">14:00 - 15:00</button>
+    </section>
+
+  <!-- Seção 3: Informações de Contato -->
+    <section id="contato" style="display: none;">
+        <h2>Insira seus dados de contato</h2>
+        <form id="form-agendamento" method="POST" action="/agendar">
+            <label for="nome">Nome Completo:</label><br>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label for="whatsapp">Número do WhatsApp/Contato:</label><br>
+            <input type="text" id="whatsapp" name="whatsapp" required><br><br>
+
+            <label for="observacoes">Observações:</label><br>
+            <textarea id="observacoes" name="observacoes" rows="4"></textarea><br><br>
+
+            <input type="hidden" id="servico-input" name="servico" value="">
+            <input type="hidden" id="horario-input" name="horario" value="">
+        
+            <button type="submit">Finalizar Agendamento</button>
+        </form>
+    </section>
+
+<!-- Seção 4: Confirmação -->
+    <section id="confirmacao" style="display: none;">
+        <h2>Agendamento Concluído!</h2>
+        <p>Obrigado por realizar seu agendamento. Entraremos em contato em breve.</p>
+        <a href="/">Voltar para o Início</a>
+    </section>
+</main>
+
+</body>
+</html>
