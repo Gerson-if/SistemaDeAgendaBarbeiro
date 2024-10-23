@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/agendar.css') }}">
-
     <title>Agendar - Barbearia</title>
 </head>
 <body>
@@ -20,6 +19,7 @@
             </ul>
         </nav>
     </header>
+
     <main class="container">
         <h2>Preencha suas informações</h2>
         <form action="/confirmacao" method="POST" class="agendamento-form">
@@ -45,11 +45,40 @@
                     <option value="15:00">15:00</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="corte">Escolha o tipo de corte:</label>
+                <select id="corte" name="corte" required>
+                    <option value="Corte Clássico">Corte Clássico - R$ 30,00</option>
+                    <option value="Corte Moderno">Corte Moderno - R$ 50,00</option>
+                    <option value="Corte Infantil">Corte Infantil - R$ 20,00</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="valor">Valor:</label>
+                <input type="text" id="valor" name="valor" readonly>
+            </div>
             <button type="submit" class="button">Confirmar Agendamento</button>
         </form>
     </main>
+
     <footer>
         <p>© 2024 Barbearia. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const corteSelect = document.getElementById('corte');
+        const valorInput = document.getElementById('valor');
+
+        const atualizarValor = () => {
+            const selectedOption = corteSelect.options[corteSelect.selectedIndex];
+            const valor = selectedOption.text.split('- R$ ')[1];
+            valorInput.value = valor;
+        };
+
+        corteSelect.addEventListener('change', atualizarValor);
+
+        // Chama a função para definir o valor ao carregar a página
+        atualizarValor();
+    </script>
 </body>
 </html>

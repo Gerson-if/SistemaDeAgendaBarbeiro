@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home.css') }}">
     <title>Barbearia - Confirmação de Agendamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/comfirmacao.css') }}">
 </head>
 <body>
     <header>
@@ -21,14 +21,51 @@
     </header>
 
     <main>
-        <h2>Seu agendamento foi confirmado!</h2>
-        <p>Obrigado por agendar conosco. Aqui estão os detalhes do seu agendamento:</p>
+        <h2>Resumo do Seu Agendamento</h2>
+        <h3>Confirme os detalhes abaixo e envie seu agendamento. Obrigado!</h3>
         <ul class="agendamento-detalhes">
             <li><strong>Nome:</strong> {{ request.form['nome'] }}</li>
             <li><strong>E-mail:</strong> {{ request.form['email'] }}</li>
             <li><strong>Telefone:</strong> {{ request.form['telefone'] }}</li>
             <li><strong>Horário Agendado:</strong> {{ request.form['horario'] }}</li>
+            <li><strong>Tipo de Corte:</strong> {{ request.form['corte'] }}</li>
+            <li><strong>Valor do Corte:</strong> R$ {{ request.form['valor'] }}</li>
         </ul>
+        
+        <p style="text-align: center;">Estamos prontos para atender você! Clique no botão abaixo para enviar seu agendamento pelo WhatsApp.</p>
+        <button id="enviarWhatsApp" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #004080; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Enviar Agendamento pelo WhatsApp</button>
+        
+
+        <script>
+            // Objeto de agendamento com detalhes do cliente
+            const agendamento = {
+                nome: "{{ request.form['nome'] }}",
+                telefone: "{{ request.form['telefone'] }}",
+                horario: "{{ request.form['horario'] }}",
+                corte: "{{ request.form['corte'] }}",
+                valor: "{{ request.form['valor'] }}",
+                nomeBarbeiro: "João Barbeiro",  // Nome do barbeiro (pode ser dinâmico se houver vários barbeiros)
+                telefoneBarbeiro: "5511998765432"  // Telefone do barbeiro responsável
+            };
+
+            // Função para enviar mensagem para o barbeiro
+            const enviarWhatsAppBarbeiro = () => {
+                const numeroBarbeiro = agendamento.telefoneBarbeiro.replace(/\D/g, ''); // Limpa caracteres não numéricos
+                const mensagemBarbeiro = `Olá ${agendamento.nomeBarbeiro}, você tem um novo agendamento! Detalhes do cliente: 
+                Nome: ${agendamento.nome}, 
+                Horário: ${agendamento.horario}, 
+                Corte: ${agendamento.corte}, 
+                Telefone: ${agendamento.telefone}. 
+                Valor: R$ ${agendamento.valor}.`;
+
+                const urlWhatsAppBarbeiro = `https://api.whatsapp.com/send?phone=${numeroBarbeiro}&text=${encodeURIComponent(mensagemBarbeiro)}`;
+                window.open(urlWhatsAppBarbeiro, '_blank');
+            };
+
+            // Adiciona evento ao botão
+            document.getElementById('enviarWhatsApp').addEventListener('click', enviarWhatsAppBarbeiro);
+        </script>
+
         <a href="/" class="button">Voltar para a página inicial</a>
     </main>
 
