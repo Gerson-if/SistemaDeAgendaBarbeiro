@@ -1,0 +1,94 @@
+/* cortes.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Cor de fundo mais clara */
+}
+
+header {
+    background: #004080; /* Cor do cabeçalho - Azul escuro */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cortes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.corte {
+    margin: 15px;
+    border: 2px solid #b3c7e6; /* Borda azul claro */
+    padding: 10px;
+    border-radius: 8px; /* Bordas arredondadas */
+    width: 300px; /* Largura do card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+    background-color: #fff; /* Fundo branco para o card */
+    text-align: center; /* Centraliza o texto */
+}
+
+.slider {
+    position: relative;
+    overflow: hidden; /* Impede que imagens fiquem fora do contêiner */
+    border-radius: 8px; /* Arredonda os cantos do slider */
+}
+
+.slides {
+    display: flex; /* Exibe as imagens em linha */
+    transition: transform 0.5s ease; /* Anima a transição entre as imagens */
+}
+
+.slides img {
+    min-width: 100%; /* Faz cada imagem ocupar 100% do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaço em branco abaixo da imagem */
+    border-radius: 8px; /* Arredonda as bordas das imagens */
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro para melhor contraste */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10; /* Fica acima das imagens */
+    border-radius: 50%; /* Botões arredondados */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #004080; /* Cor do footer - Azul escuro */
+    color: white;
+}

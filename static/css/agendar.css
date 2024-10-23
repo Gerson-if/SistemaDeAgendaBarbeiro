@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Cor de fundo mais clara */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #004080; /* Azul escuro para o cabeçalho */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Exibe os itens da lista na mesma linha */
+    margin-right: 20px; /* Espaço entre os itens */
+}
+
+nav ul li a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+.container {
+    margin: 40px auto; /* Espaço acima e abaixo */
+    padding: 20px; /* Espaço interno */
+    border-radius: 8px; /* Canto arredondado */
+    background-color: white; /* Fundo branco para o contêiner */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 600px; /* Largura máxima do contêiner */
+}
+
+h2 {
+    text-align: center; /* Centraliza o título */
+    color: #004080; /* Azul para o título */
+}
+
+.agendamento-form {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    gap: 15px; /* Espaçamento entre os elementos do formulário */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Organiza os labels e inputs verticalmente */
+}
+
+label {
+    font-weight: bold; /* Torna os labels em negrito */
+}
+
+input, select {
+    padding: 10px; /* Preenchimento interno nos campos */
+    border: 1px solid #b3c7e6; /* Azul claro para a borda */
+    border-radius: 4px; /* Canto arredondado nos campos */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+input:focus, select:focus {
+    border-color: #004080; /* Borda azul escura ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+.button {
+    background-color: #004080; /* Azul escuro para o botão */
+    color: white; /* Texto do botão em branco */
+    padding: 10px;
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Canto arredondado do botão */
+    cursor: pointer; /* Muda o cursor para pointer */
+    font-size: 16px; /* Tamanho da fonte do botão */
+}
+
+.button:hover {
+    background-color: #002244; /* Azul muito escuro ao passar o mouse */
+}
+
+footer {
+    background-color: #004080; /* Azul escuro para o rodapé */
+    color: white; /* Texto do rodapé em branco */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Preenchimento no rodapé */
+    position: relative; /* Para posicionamento relativo */
+    bottom: 0; /* Alinha o rodapé ao fundo */
+    width: 100%; /* Largura total */
+}

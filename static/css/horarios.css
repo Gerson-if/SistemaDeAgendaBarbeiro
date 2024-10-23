@@ -1,0 +1,67 @@
+/* horarios.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Cor de fundo mais clara */
+}
+
+header {
+    background: #004080; /* Cor do cabeçalho - Azul escuro */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse; /* Remove espaços entre as células */
+}
+
+table, th, td {
+    border: 1px solid #b3c7e6; /* Borda azul claro */
+}
+
+th {
+    background-color: #004080; /* Fundo do cabeçalho da tabela */
+    color: white;
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff; /* Fundo branco para as células */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #004080; /* Cor do footer - Azul escuro */
+    color: white;
+}

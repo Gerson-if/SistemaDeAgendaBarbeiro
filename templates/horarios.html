@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Horários</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='horarios.css') }}"> <!-- Adicionando o CSS de horários -->
+</head>
+<body>
+    <header>
+        <h1>Agende Seu Horário</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/agendar">Agendar</a></li>
+                <li><a href="/cortes">Cortes</a></li>
+                <li><a href="/horarios">Horários</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Horários Disponíveis</h2>
+        <p>Período de Atendimento: <strong>Segunda a Sexta, das 10:00 às 17:00</strong></p> <!-- Período de atendimento -->
+        <div class="horarios-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horários</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for horario in horarios %}
+                        <tr>
+                            <td>{{ horario }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Seu Salão. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

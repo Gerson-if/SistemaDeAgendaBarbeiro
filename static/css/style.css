@@ -1,0 +1,128 @@
+/* style.css */
+
+/* Estilos Gerais */
+html, body {
+    height: 100%; /* Garante que o corpo e o html ocupem a altura total */
+}
+
+body {
+    display: flex; /* Define o layout como flexível */
+    flex-direction: column; /* Alinha os elementos na coluna */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeff1; /* Um tom de azul claro */
+}
+
+/* Estilos do Header */
+header {
+    background-color: #1a3e72; /* Azul mais profundo */
+    color: #ffffff; /* Branco */
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Estilos do Menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff; /* Azul claro */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff; /* Branco para hover */
+}
+
+/* Estilos do Footer */
+footer {
+    background-color: #1a3e72; /* Azul profundo */
+    color: #ffffff; /* Branco */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Faz com que o footer "desça" para o final da página */
+}
+
+/* Botões */
+.button {
+    background-color: #007bff; /* Azul vibrante */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Azul escuro */
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto; /* Centraliza o slider */
+    max-width: 800px; /* Largura máxima do slider */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%; /* Cada slide ocupa 100% do container */
+}
+
+.slide img {
+    width: 100%; /* Ajusta a largura da imagem */
+    height: auto; /* Mantém a proporção */
+    max-height: 400px; /* Define altura máxima para a imagem */
+    border-radius: 8px; /* Arredonda os cantos das imagens */
+    object-fit: cover; /* Preenche o contêiner sem distorcer a imagem */
+}
+
+/* Botões de Navegação Personalizados */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%; /* Botão redondo */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Escurece ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
+
+.prev {
+    left: 10px; /* Posição do botão anterior */
+}
+
+.next {
+    right: 10px; /* Posição do botão próximo */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    nav li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}

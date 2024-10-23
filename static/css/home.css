@@ -1,0 +1,69 @@
+/* home.css */
+
+body {
+    background-color: #f4f4f4; /* Fundo claro */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    opacity: 1; /* Garante que o corpo não seja transparente */
+}
+
+
+main {
+    padding: 1rem;
+}
+
+.cortes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.corte {
+    flex: 1 1 300px; /* Tamanho responsivo */
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #b3c7e6; /* Azul claro */
+    border-radius: 8px;
+    background-color: #ffffff; /* Fundo branco */
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s; /* Animação ao passar o mouse */
+}
+
+.corte:hover {
+    transform: translateY(-5px); /* Levanta o corte ao passar o mouse */
+}
+
+.corte img {
+    width: 100%; /* Ajusta a largura da imagem dos cortes */
+    height: 200px; /* Define uma altura fixa */
+    border-radius: 8px; /* Arredonda os cantos das imagens */
+    object-fit: cover; /* Preenche o contêiner sem distorcer a imagem */
+}
+
+.corte h3 {
+    margin: 0.5rem 0;
+    color: #004080; /* Azul */
+    font-size: 1.5rem; /* Tamanho da fonte do título do corte */
+}
+
+.corte p {
+    margin: 0.5rem 0;
+    color: #666; /* Texto cinza */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #004080; /* Azul escuro */
+    color: white; /* Texto branco */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: background-color 0.3s; /* Transição ao passar o mouse */
+}
+
+.button:hover {
+    background-color: #0056a6; /* Azul mais claro ao passar o mouse */
+}

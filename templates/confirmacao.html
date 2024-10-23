@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home.css') }}">
+    <title>Barbearia - Confirmação de Agendamento</title>
+</head>
+<body>
+    <header>
+        <h1>Barbearia</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/agendar">Agendar</a></li>
+                <li><a href="/cortes">Cortes</a></li>
+                <li><a href="/horarios">Horários</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Seu agendamento foi confirmado!</h2>
+        <p>Obrigado por agendar conosco. Aqui estão os detalhes do seu agendamento:</p>
+        <ul class="agendamento-detalhes">
+            <li><strong>Nome:</strong> {{ request.form['nome'] }}</li>
+            <li><strong>E-mail:</strong> {{ request.form['email'] }}</li>
+            <li><strong>Telefone:</strong> {{ request.form['telefone'] }}</li>
+            <li><strong>Horário Agendado:</strong> {{ request.form['horario'] }}</li>
+        </ul>
+        <a href="/" class="button">Voltar para a página inicial</a>
+    </main>
+
+    <footer>
+        <p>© 2024 Barbearia. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

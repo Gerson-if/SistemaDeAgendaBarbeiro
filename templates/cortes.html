@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/cortes.css') }}">
+    <title>Cortes - Barbearia</title>
+</head>
+<body>
+    <header>
+        <h1>Cortes Disponíveis</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/agendar">Agendar</a></li>
+                <li><a href="/cortes">Cortes</a></li>
+                <li><a href="/horarios">Horários</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Nossos Cortes</h2>
+        <div class="cortes-container">
+            <div class="corte">
+                <h3>Corte Clássico</h3>
+                <div class="slider">
+                    <div class="slides">
+                        <img src="{{ url_for('static', filename='imagens/corte-de-cabelo.png') }}" alt="Corte Clássico">
+                        <img src="{{ url_for('static', filename='imagens/corte-de-cabelo_n.png') }}" alt="Corte Clássico - Diferente Estilo">
+                    </div>
+                    <button class="nav-button prev">&#10094;</button>
+                    <button class="nav-button next">&#10095;</button>
+                </div>
+                <p>Preço: R$ 30</p>
+            </div>
+            <div class="corte">
+                <h3>Fade</h3>
+                <div class="slider">
+                    <div class="slides">
+                        <img src="{{ url_for('static', filename='imagens/cabelo_1.png') }}" alt="Fade">
+                        <img src="{{ url_for('static', filename='imagens/cabelo.png') }}" alt="Fade - Diferente Estilo">
+                    </div>
+                    <button class="nav-button prev">&#10094;</button>
+                    <button class="nav-button next">&#10095;</button>
+                </div>
+                <p>Preço: R$ 40</p>
+            </div>
+            <div class="corte">
+                <h3>Corte na Tesoura</h3>
+                <div class="slider">
+                    <div class="slides">
+                        <img src="{{ url_for('static', filename='imagens/corte-de-cabelo.png') }}" alt="Corte na Tesoura">
+                        <img src="{{ url_for('static', filename='imagens/corte-de-cabelo_n.png') }}" alt="Corte na Tesoura - Diferente Estilo">
+                    </div>
+                    <button class="nav-button prev">&#10094;</button>
+                    <button class="nav-button next">&#10095;</button>
+                </div>
+                <p>Preço: R$ 35</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Barbearia. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        // Código JavaScript para o slider
+        document.querySelectorAll('.slider').forEach(slider => {
+            const slides = slider.querySelector('.slides');
+            const nextButton = slider.querySelector('.next');
+            const prevButton = slider.querySelector('.prev');
+
+            let index = 0;
+
+            const showSlide = (n) => {
+                const totalSlides = slides.children.length;
+                if (n >= totalSlides) {
+                    index = 0;
+                } else if (n < 0) {
+                    index = totalSlides - 1;
+                }
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            };
+
+            nextButton.addEventListener('click', () => {
+                index++;
+                showSlide(index);
+            });
+
+            prevButton.addEventListener('click', () => {
+                index--;
+                showSlide(index);
+            });
+        });
+    </script>
+</body>
+</html>
