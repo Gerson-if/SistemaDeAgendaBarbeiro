@@ -1,19 +1,5 @@
 /* comfirmacao.css */
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Cor de fundo mais clara */
-}
-
-header {
-    background: #004080; /* Cor do cabeçalho - Azul escuro */
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -83,11 +69,4 @@ button {
 
 button:hover {
     background-color: #003366; /* Azul mais escuro no hover */
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #004080; /* Cor do footer - Azul escuro */
-    color: white;
 }

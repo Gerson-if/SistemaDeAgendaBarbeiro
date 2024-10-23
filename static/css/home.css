@@ -1,10 +1,4 @@
-/* home.css */
-
-body {
-    background-color: #f4f4f4; /* Fundo claro */
-    font-family: Arial, sans-serif; /* Fonte padrão */
-    opacity: 1; /* Garante que o corpo não seja transparente */
-}
+/* Estilos da Página Inicial */
 
 
 main {
@@ -52,18 +46,53 @@ main {
     color: #666; /* Texto cinza */
 }
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #004080; /* Azul escuro */
-    color: white; /* Texto branco */
-    text-decoration: none; /* Remove o sublinhado */
-    transition: background-color 0.3s; /* Transição ao passar o mouse */
+/* Estilos do Slider */
+.slider {
+    position: relative;
+    max-width: 600px; /* Reduz a largura máxima do slider */
+    margin: 0 auto; /* Centraliza o slider */
+    overflow: hidden; /* Esconde o excesso de imagens */
 }
 
-.button:hover {
-    background-color: #0056a6; /* Azul mais claro ao passar o mouse */
+.slides {
+    display: flex; /* Flexbox para alinha os slides em linha */
+    transition: transform 0.5s ease; /* Transição suave ao mudar de slide */
+}
+
+.slide {
+    min-width: 100%; /* Cada slide ocupa 100% da largura do slider */
+    padding: 10px; /* Adiciona espaçamento */
+}
+
+.slide img {
+    width: 100%; /* Faz a imagem ocupar a largura total do slide */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 300px; /* Define uma altura máxima para os slides */
+    object-fit: contain; /* Garante que a imagem fique dentro do contêiner, sem cortar */
+    border-radius: 10px; /* Cantos arredondados */
+}
+
+/* Botões de Navegação Personalizados */
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%; /* Largura total para centralizar os botões */
+    display: flex; /* Flexbox para os botões */
+    justify-content: space-between; /* Espaçamento entre os botões */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+}
+
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%; /* Botão redondo */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Escurece ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
 }

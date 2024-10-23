@@ -1,31 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Cor de fundo mais clara */
-    margin: 0;
-    padding: 0;
-}
 
-header {
-    background-color: #004080; /* Azul escuro para o cabeçalho */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none; /* Remove os marcadores da lista */
-    padding: 0;
-}
-
-nav ul li {
-    display: inline; /* Exibe os itens da lista na mesma linha */
-    margin-right: 20px; /* Espaço entre os itens */
-}
-
-nav ul li a {
-    color: white; /* Cor do texto dos links */
-    text-decoration: none; /* Remove o sublinhado dos links */
-}
 
 nav ul li a:hover {
     text-decoration: underline; /* Sublinha ao passar o mouse */
@@ -84,14 +57,4 @@ input:focus, select:focus {
 
 .button:hover {
     background-color: #002244; /* Azul muito escuro ao passar o mouse */
-}
-
-footer {
-    background-color: #004080; /* Azul escuro para o rodapé */
-    color: white; /* Texto do rodapé em branco */
-    text-align: center; /* Centraliza o texto */
-    padding: 10px; /* Preenchimento no rodapé */
-    position: relative; /* Para posicionamento relativo */
-    bottom: 0; /* Alinha o rodapé ao fundo */
-    width: 100%; /* Largura total */
 }
